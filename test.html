@@ -3,30 +3,207 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+	<script src="http://codeorigin.jquery.com/jquery-1.10.2.js"></script>
+	
+	
+	<!-- Watch media lets us check for media queries. -->
+	<script src="js/enquire.js"></script>
 	<script src="js/jquery.responsivetables-0.0.1.js"></script>
+	
+	<script>
+	$(function () {
+		$('table').responsivetables();
+	});
+		
+	</script>
+	
+	
+	<!-- 
+	Possible styles..
+	 -->
+	<style type="text/css">
+		.responsive-table .mobile-tr {
+			margin-bottom: 5px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid #F0EBEB;
+			display: block;
+		}
+		
+	</style>
+
 </head>
 <body>
+<h1>Responsive tables</h1>
 
+<p>This is a jQuery plugin. The plugin makes it possible to add a selector to tables that makes the tables responsive.
+Add forexample <em>$('table').responsivetable();</em> to your javascript
+</p>
+
+<h3>Download:</h3>
+
+<ul>
+	<li><a href="js/jquery.responsivetables-0.0.1.js">Download v0.0.1</a></li>
+</ul>
+
+<h3>Requirements:</h3>
+
+<ul>
+	<li><a href="http://wicky.nillia.ms/enquire.js/">enquire.js</a></li>
+</ul>
+
+<h3>Example usage:</h3>
+
+<pre>
+$(function () {
+	$('table').responsivetables();
+});
+</pre>
+
+<h3>Styles:</h3>
+
+<p>The plugin automaticaly adds <em>responsive-table</em> class to matched tables. <em>.mobile-</em> prefixes are only applied in on small screens.</p>
+
+<pre>
+.responsive-table .mobile-tr {
+	display: block; /* This is probably always great to have.*/
+}
+.responsive-table .mobile-th {
+}
+.responsive-table .mobile-td {
+}
+
+</pre>
+
+<h1>Demo time:</h1>
+
+<h2>NO THEAD + NO TBODY</h2>
 
 <table>
-	<tr>
-		<th>Test 1</th>
-		<th>Test 2</th>
-		<th>Test 3</th>
-		<th>Test 4</th>
-		<th>Test 5</th>
-		<th>Test 6</th>
-	</tr>
-	<tr>
-		<td>Noe test data 1</td>
-		<td>Noe test data 2</td>
-		<td>Noe test data 3</td>
-		<td>Noe test data 4</td>
-		<td>Noe test data 5</td>
-		<td>Noe test data 6</td>
-	</tr>
+		<tr>
+			<th>Test 1</th>
+			<th>Test 2</th>
+			<th>Test 3</th>
+			<th>Test 4</th>
+			<th>Test 5</th>
+			<th>Test 6</th>
+		</tr>
+		<tr>
+			<td>Noe test data 1</td>
+			<td>Noe test data 2</td>
+			<td>Noe test data 3</td>
+			<td>Noe test data 4</td>
+			<td>Noe test data 5</td>
+			<td>Noe test data 6</td>
+		</tr>
+		<tr>
+			<td>Andre test data 1</td>
+			<td>Andre test data 2</td>
+			<td>Andre test data 3</td>
+			<td>Andre test data 4</td>
+			<td>Andre test data 5</td>
+			<td>Andre test data 6</td>
+		</tr>
 </table>
+
+
+<h2>THEAD + TBODY</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>Test 1</th>
+			<th>Test 2</th>
+			<th>Test 3</th>
+			<th>Test 4</th>
+			<th>Test 5</th>
+			<th>Test 6</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Noe test data 1</td>
+			<td>Noe test data 2</td>
+			<td>Noe test data 3</td>
+			<td>Noe test data 4</td>
+			<td>Noe test data 5</td>
+			<td>Noe test data 6</td>
+		</tr>
+		<tr>
+			<td>Andre test data 1</td>
+			<td>Andre test data 2</td>
+			<td>Andre test data 3</td>
+			<td>Andre test data 4</td>
+			<td>Andre test data 5</td>
+			<td>Andre test data 6</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h2>THEAD</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>Test 1</th>
+			<th>Test 2</th>
+			<th>Test 3</th>
+			<th>Test 4</th>
+			<th>Test 5</th>
+			<th>Test 6</th>
+		</tr>
+	</thead>
+		<tr>
+			<td>Noe test data 1</td>
+			<td>Noe test data 2</td>
+			<td>Noe test data 3</td>
+			<td>Noe test data 4</td>
+			<td>Noe test data 5</td>
+			<td>Noe test data 6</td>
+		</tr>
+		<tr>
+			<td>Andre test data 1</td>
+			<td>Andre test data 2</td>
+			<td>Andre test data 3</td>
+			<td>Andre test data 4</td>
+			<td>Andre test data 5</td>
+			<td>Andre test data 6</td>
+		</tr>
+</table>
+
+
+<h2>TBODY</h2>
+
+<table>
+		<tr>
+			<th>Test 1</th>
+			<th>Test 2</th>
+			<th>Test 3</th>
+			<th>Test 4</th>
+			<th>Test 5</th>
+			<th>Test 6</th>
+		</tr>
+	<tbody>
+		<tr class="test">
+			<td>Noe test data 1</td>
+			<td>Noe test data 2</td>
+			<td>Noe test data 3</td>
+			<td>Noe test data 4</td>
+			<td>Noe test data 5</td>
+			<td>Noe test data 6</td>
+		</tr>
+		<tr>
+			<td>Andre test data 1</td>
+			<td>Andre test data 2</td>
+			<td>Andre test data 3</td>
+			<td>Andre test data 4</td>
+			<td>Andre test data 5</td>
+			<td>Andre test data 6</td>
+		</tr>
+	</tbody>
+</table>
+
 
 </body>
 </html>
