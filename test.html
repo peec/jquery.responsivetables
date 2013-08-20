@@ -26,8 +26,15 @@
 		.responsive-table .mobile-tr {
 			margin-bottom: 5px;
 			padding-bottom: 5px;
-			border-bottom: 1px solid #F0EBEB;
-			display: block;
+			border-bottom: 1px solid #F0EBEB;	
+		}
+		@media screen and (max-width:480px) {
+			.responsive-table .desktop-tr {
+				display: none;
+			}
+			.responsive-table .mobile-tr {
+				display: block !important; /* !important is important >:)*/
+			}
 		}
 		
 	</style>
@@ -46,12 +53,6 @@ Add forexample <em>$('table').responsivetable();</em> to your javascript
 	<li><a href="js/jquery.responsivetables-0.0.1.js">Download v0.0.1</a></li>
 </ul>
 
-<h3>Requirements:</h3>
-
-<ul>
-	<li><a href="http://wicky.nillia.ms/enquire.js/">enquire.js</a></li>
-</ul>
-
 <h3>Example usage:</h3>
 
 <pre>
@@ -64,16 +65,7 @@ $(function () {
 
 <p>The plugin automaticaly adds <em>responsive-table</em> class to matched tables. <em>.mobile-</em> prefixes are only applied in on small screens.</p>
 
-<pre>
-.responsive-table .mobile-tr {
-	display: block; /* This is probably always great to have.*/
-}
-.responsive-table .mobile-th {
-}
-.responsive-table .mobile-td {
-}
 
-</pre>
 
 <h1>Demo time:</h1>
 

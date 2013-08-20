@@ -13,17 +13,14 @@
 				var $el = $(this),
 					$thead = $el.children('thead'),
 					$tbody = $el.children('tbody'),
-					original_head = "",
 					rows = null,
 					columns = null;
 				
 				
-				$el.addClass('responsive-table');
 				
 				// Does the thead element exist ?
 				if ($thead.length > 0) {
 					console.log("Table has THEAD");
-					original_head = $thead.html();
 					rows = $tbody.find('tr');
 					columns = $thead.find('th');
 				} 
@@ -35,7 +32,6 @@
 					
 					if ($thead.length > 0) {
 						$thead.addClass('resptable-thead');
-						original_head = $thead.html();
 						
 						rows = $el.find('tr:not(:first)');
 						columns = $thead.find('th');
@@ -51,9 +47,11 @@
 					return;
 				}
 				
-				var original_body = $tbody.html();
+
+				$el.addClass('responsive-table');
+				$thead.addClass("desktop-tr");
+				rows.addClass("desktop-tr");
 				
-				var mobile_head = "";
 				var mobile_body = "";
 				
 				
@@ -61,7 +59,7 @@
 					var $tr = $(valRow);
 					var $tds = $tr.children('td');
 					
-					mobile_body += "<tbody class='mobile-tr'>";
+					mobile_body += "<tbody class='mobile-tr' style='display: none;'>";
 					
 					columns.each(function (index, val) {
 						
@@ -78,18 +76,7 @@
 				});
 				
 				
-				// Register a handler based on width. 
-				enquire.register("screen and (max-width:480px)", {
-					match: function () {
-						$thead.html(mobile_head);
-						$tbody.html(mobile_body);
-					},
-					unmatch: function () {
-						$thead.html(original_head);
-						$tbody.html(original_body);
-						
-					}
-				});
+				$el.append(mobile_body);
 			});
 		}
 	});
