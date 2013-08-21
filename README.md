@@ -24,8 +24,10 @@ Example css that you must add, the media query is important, rest is just styles
 			.responsive-table .mobile-tr {
 				display: block !important; /* !important is important >:)*/
 			}
+		
 		}
-``
+```
+
 
 
 ## Options
@@ -46,6 +48,7 @@ Example css that you must add, the media query is important, rest is just styles
 	mobileThClass: 'mobile-th',
 	mobileTdClass: 'mobile-td'
 }
-``
+```
+
 
 
