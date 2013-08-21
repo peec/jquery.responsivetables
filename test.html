@@ -13,7 +13,8 @@
 	
 	<script>
 	$(function () {
-		$('table').responsivetables();
+		// Do not use the debug flag in production!
+		$('table').responsivetables({debug: true});
 	});
 		
 	</script>
@@ -192,6 +193,54 @@ $(function () {
 			<td>Andre test data 4</td>
 			<td>Andre test data 5</td>
 			<td>Andre test data 6</td>
+		</tr>
+	</tbody>
+</table>
+
+<h1>And some examples that should fail to be modified by the plugin!</h1>
+
+
+<h2>Malformated Table (does not responsive)</h2>
+
+<p>Does not work because there are no TH elements..</p>
+
+<table>
+	<tbody>
+		<tr class="test">
+			<td>Noe test data 1</td>
+			<td>Noe test data 2</td>
+			<td>Noe test data 3</td>
+			<td>Noe test data 4</td>
+			<td>Noe test data 5</td>
+			<td>Noe test data 6</td>
+		</tr>
+		<tr>
+			<td>Andre test data 1</td>
+			<td>Andre test data 2</td>
+			<td>Andre test data 3</td>
+			<td>Andre test data 4</td>
+			<td>Andre test data 5</td>
+			<td>Andre test data 6</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+<h2>Malformated Table (already is "responsive")</h2>
+
+<p>This does not need mobile version because its already done..</p>
+
+<table>
+	<tbody>
+		<tr class="test">
+			<th>Noe test data 1</th>
+			<td>Noe test data 2</td>
+		</tr>
+		<tr>
+			<th>Andre test data 1</th>
+			<td>Andre test data 2</td>
 		</tr>
 	</tbody>
 </table>
