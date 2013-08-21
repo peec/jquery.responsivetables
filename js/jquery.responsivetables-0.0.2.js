@@ -1,4 +1,4 @@
-// require.responsivetables-0.0.1.js - Responsive Tables
+// require.responsivetables-0.0.2.js - Responsive Tables
 // Author: Petter Kjelkenes <pk@aplia.no>
 // License: LGPL
 
